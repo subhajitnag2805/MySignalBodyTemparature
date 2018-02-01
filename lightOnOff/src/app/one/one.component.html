@@ -1,0 +1,28 @@
+<div>
+  <h3>Enter phone number for login:</h3>
+  <div>
+    <input type="text" [(ngModel)]="phoneNumber"/>
+    <button (click)="sendOtp()">Submit</button>
+  </div>
+  <div>
+    {{name}} {{email}}
+  </div>
+  <div>
+    <button (click)="start_Temp_Func()" [disabled]="start_Temp">StartTempMesure</button>
+    <button (click)="stop_Temp_Func()" [disabled]="stop_Temp">StopTempMesure</button>
+    <!-- <button (click)="reset_Graph_Func()" [disabled]="reset_Graph">Reset Graph</button> -->
+  </div>
+</div>
+<div>
+  <h4>Temparature Reading : {{tempData}}</h4>
+  <h4>Reading stop Message : {{stopReadingMess}}</h4>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <div style="display: block;">
+      <canvas baseChart width="200" height="200" [datasets]="lineChartData" [labels]="lineChartLabels" [options]="lineChartOptions"
+        [colors]="lineChartColors" [legend]="lineChartLegend" [chartType]="lineChartType"></canvas>
+    </div>
+  </div>
+</div>
